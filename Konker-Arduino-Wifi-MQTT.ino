@@ -62,11 +62,11 @@ void reconnect() {
 }
 
 //Now we create a function to read the analog "sensorPin" and publish the value using MQTT
-void sendvoltage(){
+void sendSensor(){
   char* messageC;
   String message = F("{\"id\":\"DeviceID\", \"value\":\"");
   message+= String(analogRead(sensorPin));
-  message+= F("\" , \"metric\":\"voltage\", \"unit\":\"ADC units\"}"); 
+  message+= F("\" , \"metric\":\"temperature\", \"unit\":\"Celsius\"}"); 
   message.toCharArray(messageC,message.length()+1);
   Serial.println(messageC);
   client.publish(PUB,messageC);
@@ -101,7 +101,7 @@ void loop() {
     reconnect();
   }
   client.loop();
-  sendvoltage();
+  sendSensor();
 }
 
 
