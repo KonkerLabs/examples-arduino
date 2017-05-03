@@ -6,8 +6,8 @@
 int sensorPin = A0;
 
 //WiFi variables
-char ssid[] = "my_ssid";     //  your wifi network SSID (name)
-const char pass[] = "my_wifi_password>";  // your wifi password
+char ssid[] = "<my_ssid>";     //  your wifi network SSID (name)
+const char pass[] = "<my_wifi_password>";  // your wifi password
 int status = WL_IDLE_STATUS;     // the Wifi radio's status
 
 //MQTT Variables
